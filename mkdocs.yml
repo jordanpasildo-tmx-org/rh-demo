@@ -1,0 +1,8 @@
+site_name: "rh-demo"
+site_description: "React TypeScript frontend web application"
+
+nav:
+  - Introduction: index.md
+
+plugins:
+  - techdocs-core

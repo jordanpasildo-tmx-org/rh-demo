@@ -1,0 +1,24 @@
+apiVersion: tekton.dev/v1
+kind: PipelineRun
+metadata:
+  generateName: rh-demo-run-
+  labels:
+    app.kubernetes.io/name: rh-demo
+    tekton.dev/pipeline: rh-demo-pipeline
+spec:
+  pipelineRef:
+    name: rh-demo-pipeline
+  params:
+    - name: git-url
+      value: "https://github.com/jordanpasildo-tmx-org/rh-demo.git"
+    - name: git-revision
+      value: "main"
+  workspaces:
+    - name: shared-workspace
+      volumeClaimTemplate:
+        spec:
+          accessModes:
+            - ReadWriteOnce
+          resources:
+            requests:
+              storage: 2Gi

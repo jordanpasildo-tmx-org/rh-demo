@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: rh-demo
+  description: React TypeScript frontend web application
+  annotations:
+    github.com/project-slug: jordanpasildo-tmx-org/rh-demo
+    tekton.dev/pipeline: rh-demo-pipeline
+    janus-idp.io/tekton: rh-demo
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - react
+    - typescript
+    - frontend
+    - tekton
+spec:
+  type: website
+  lifecycle: experimental
+  owner: group:default/jordanpasildo-tmx-org
